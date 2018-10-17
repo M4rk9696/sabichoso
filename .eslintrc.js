@@ -1,7 +1,8 @@
 module.exports = {
   extends: 'standard',
-  plugins: ['prettier'],
+  plugins: ['prettier', 'mocha'],
   rules: {
-    'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
+    'mocha/no-exclusive-tests': 'error'
   }
 }
