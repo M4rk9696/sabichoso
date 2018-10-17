@@ -48,17 +48,20 @@ const getMonthString = month => {
  * @return {string} formatted hour
  */
 const getHour = hour => {
+  if (hour === 0) {
+    return '12'
+  }
   if (hour > 12) {
     const newHour = hour - 12
     if (newHour < 10) {
       return `0${newHour}`
     }
-    return newHour
+    return newHour.toString()
   } else {
-    if (hour < 12) {
+    if (hour < 10) {
       return `0${hour}`
     }
-    return hour
+    return hour.toString()
   }
 }
 
@@ -73,7 +76,7 @@ const getMinutes = minutes => {
     return `0${minutes}`
   }
 
-  return minutes
+  return minutes.toString()
 }
 
 module.exports = {
